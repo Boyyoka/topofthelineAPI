@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="topFoodContext-Web.config Connection String" description="topFoodContext Connection String used in web.config by the application to access the database." defaultValue="data source=TACHIKOMA;initial catalog=topfood;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="d:\\users\\cam\ geronimo\\documents\\visual\ studio\ 2015\\Projects\\topoftheline\\topoftheline\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='topFoodContext']/@connectionString" />
+  </parameter>
+  <parameter name="topFoodContext_DatabasePublish-Web.config Connection String" description="topFoodContext_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="topFoodContext_DatabasePublish.ConnetionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="d:\\users\\cam\ geronimo\\documents\\visual\ studio\ 2015\\Projects\\topoftheline\\topoftheline\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='topFoodContext_DatabasePublish']/@connectionString" />
+  </parameter>
+</parameters>
