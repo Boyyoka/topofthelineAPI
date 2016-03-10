@@ -44,3 +44,7 @@ d:\users\cam geronimo\documents\visual studio 2015\Projects\topoftheline\topofth
 d:\users\cam geronimo\documents\visual studio 2015\Projects\topoftheline\topoftheline\obj\Release\topoftheline.csproj.GenerateResource.Cache
 d:\users\cam geronimo\documents\visual studio 2015\Projects\topoftheline\topoftheline\obj\Release\topoftheline.dll
 d:\users\cam geronimo\documents\visual studio 2015\Projects\topoftheline\topoftheline\obj\Release\topoftheline.pdb
+d:\users\cam geronimo\documents\visual studio 2015\Projects\topoftheline\topoftheline\obj\Release\topoftheline.csprojResolveAssemblyReference.cache
+d:\users\cam geronimo\documents\visual studio 2015\Projects\topoftheline\topoftheline\bin\System.Web.Cors.dll
+d:\users\cam geronimo\documents\visual studio 2015\Projects\topoftheline\topoftheline\bin\System.Web.Http.Cors.dll
+d:\users\cam geronimo\documents\visual studio 2015\Projects\topoftheline\topoftheline\bin\System.Web.Http.Cors.xml

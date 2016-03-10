@@ -22,19 +22,6 @@ namespace topoftheline.Controllers
             return db.Ratings;
         }
 
-        // GET: api/Ratings/5
-        [ResponseType(typeof(Rating))]
-        public IHttpActionResult GetRating(int id)
-        {
-            Rating rating = db.Ratings.Find(id);
-            if (rating == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(rating);
-        }
-
         // PUT: api/Ratings/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutRating(int id, Rating rating)
@@ -128,6 +115,22 @@ namespace topoftheline.Controllers
         private bool RatingExists(int id)
         {
             return db.Ratings.Count(e => e.FoodID == id) > 0;
+        }
+
+        [Route("api/ratings/{foodID:int}/{restaurantID:int}")]
+        public IEnumerable<Rating> GetRatings(int foodID, int restaurantID)
+        {
+            IEnumerable<Rating> ratings = null;
+
+            ratings = (from rating in db.Ratings
+                       join food in db.Foods
+                       on foodID equals food.FoodID
+                       join restaurant in db.Restaurants
+                       on restaurantID equals restaurant.RestaurantID
+                       where foodID == rating.FoodID && restaurantID == rating.RestaurantID
+                       select rating).ToList();
+
+            return ratings;
         }
     }
 }

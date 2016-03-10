@@ -12,6 +12,7 @@ using topoftheline;
 
 namespace topoftheline.Controllers
 {
+   
     public class CitiesController : ApiController
     {
         private topofContext db = new topofContext();
@@ -114,5 +115,6 @@ namespace topoftheline.Controllers
         {
             return db.Cities.Count(e => e.CityID == id) > 0;
         }
+
     }
 }

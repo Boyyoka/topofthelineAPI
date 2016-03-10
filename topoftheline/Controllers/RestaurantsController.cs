@@ -114,5 +114,40 @@ namespace topoftheline.Controllers
         {
             return db.Restaurants.Count(e => e.RestaurantID == id) > 0;
         }
+
+          //GET api/restaurants/3/cities
+        [Route("api/restaurants/{cityId:int}/cities")]
+        public IEnumerable<Restaurant> GetRestaurantsByCity(int cityId)
+        {
+            return db.Restaurants
+                        .Where(restaurant => restaurant.CityID == cityId);
+        }
+
+            //GET api/restaurants/baklava/foods
+        [Route("api/restaurants/{foodID:int}/{cityID:int}")]
+        public IEnumerable<Restaurant> GetRestaurantsWithFood(int foodID, int cityID)
+        {
+            IEnumerable<Restaurant> restaurants = null;
+
+            restaurants = (from food in db.Foods
+                           join rating in db.Ratings
+                           on food.FoodID equals rating.FoodID
+                           join restaurant in db.Restaurants
+                           on rating.RestaurantID equals restaurant.RestaurantID
+                           join city in db.Cities
+                           on restaurant.CityID equals city.CityID
+                           where rating.FoodID == foodID && city.CityID == cityID
+                           select restaurant).ToList();
+
+            //restaurants = (from restaurant in db.Restaurants
+            //               join rating in db.Ratings
+            //               on restaurant.RestaurantID equals rating.RestaurantID
+            //               join food in db.Foods
+            //               on rating.FoodID equals food.FoodID
+            //               where food.FoodID == foodID
+            //               select restaurant).ToList();
+            return restaurants;
+
+        }
     }
 }
