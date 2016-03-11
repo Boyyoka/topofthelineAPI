@@ -9,7 +9,7 @@ namespace topoftheline
     [Table("Food")]
     public partial class Food
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+      
         public Food()
         {
             Ratings = new HashSet<Rating>();
@@ -25,7 +25,7 @@ namespace topoftheline
         [StringLength(50)]
         public string Description { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        
         public virtual ICollection<Rating> Ratings { get; set; }
     }
 }

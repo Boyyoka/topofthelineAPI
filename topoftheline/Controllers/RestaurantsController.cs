@@ -138,14 +138,6 @@ namespace topoftheline.Controllers
                            on restaurant.CityID equals city.CityID
                            where rating.FoodID == foodID && city.CityID == cityID
                            select restaurant).ToList();
-
-            //restaurants = (from restaurant in db.Restaurants
-            //               join rating in db.Ratings
-            //               on restaurant.RestaurantID equals rating.RestaurantID
-            //               join food in db.Foods
-            //               on rating.FoodID equals food.FoodID
-            //               where food.FoodID == foodID
-            //               select restaurant).ToList();
             return restaurants;
 
         }
